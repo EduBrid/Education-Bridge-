@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EduBrid | Teacher : Files</title>
+    
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css" />
+
+    <!-- master.js -->
+    <link rel="stylesheet" href="css/master.css" />
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+
+    <!-- virtual-select -->
+    <link rel="stylesheet" href="../virtual_select/virtual-select.min.css" />
+    <script src="../virtual_select/virtual-select.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="page d-flex">
+      <!-- sidebar -> Menu -->
+      <div class="sidebar bg-white p-20 p-relative">
+        <h3 class="p-relative txt-c mt-0">EduBrid</h3>
+        <ul>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
+              <i class="fa-solid fa-user fa-fw"></i>
+              <span>profile</span>
+            </a>
+          </li>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_files.html">
+              <i class="fa-solid fa-file fa-fw"></i>
+              <span>Files</span>
+            </a>
+          </li>
+          <li>
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_videos.html">
+              <i class="fa-solid fa-video fa-fw"></i>
+              <span>Videos</span>
+            </a>
+          </li>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_classes.html">
+              <i class="fa-solid fa-school fa-fw"></i>
+              <span>Classes</span>
+            </a>
+          </li>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="#" id="log-out-li">
+              <i class="fa-solid fa-sign-out fa-fw"></i>
+              <span>Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="content w-full">
+        <!-- Start Head -->
+        <div class="head bg-white p-15 between-flex">
+          <div></div>
+          <div class="icons d-flex align-center">
+            <span class="notification p-relative">
+              <i id="translate" style="cursor: pointer;" class="fa-solid fa-globe fa-lg"></i>
+              <div class="toggle-traslate" id="toggle-traslate">
+                <a id="langEN">EN</a>
+                <a id="langFR">FR</a>
+              </div>
+            </span>
+            <span>           
+              <i href="#" id="log-out-icon" style="cursor: pointer; margin-left: 10px;" class="fa-solid fa-power-off fa-lg"></i>
+            </span>
+          </div>
+        </div>
+        <!-- End Head -->
+        <h1 class="p-relative">Videos</h1>
+        <div class="m-20 gap-20">
+            <div class="filtter_Sec d-flex txt-c gap-20 f-wrap">
+              <div class="p-relative">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Search with Name " aria-label="Recipient's username" aria-describedby="button-addon2">
+                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                </div>
+              </div>
+                <div class="selectSection p-relative">
+                  <div class="form-group">
+										<select class="form-control" id="subject-filter">
+											<!-- <option selected>Subject</option>
+											<option value="1">Subject 01</option>
+											<option value="2">Subject 02</option>
+											<option value="3">Subject 03</option> -->
+										</select>
+									</div>
+                  <div class="form-group">
+										<select class="form-control" id="class-filter">
+											<!-- <option selected>Class</option>
+											<option value="1">Class 01</option>
+											<option value="2">Class 02</option>
+											<option value="3">Class 03</option> -->
+										</select>
+									</div>
+                </div>
+                <div class="search p-relative">
+                  <div class="col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
+										<a href="#" class="btn btn-success" id="btn-add-new-file" data-toggle="modal">
+											<i class="fa-solid fa-add fa-fw"></i>
+											<span>Add A New Video</span>
+										</a>
+									</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!---- logout modal  *start* --------->
+        <form>
+          <div class="modal fade" tabindex="-1" id="log-out-modal" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Log Out</h5>
+                  <button type="button" class="close" id="btn-close-log-out" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to log out</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="btn-cancel-log-out">Cancel</button>
+                  <button type="button" class="btn btn-success" id="btn-log-out">Log Out</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!---- logout modal  *end* --------->
+
+        <!----add-file-modal start--------->
+        <form>
+					<div class="modal fade" tabindex="-1" id="add-file-modal" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 id="h5-add-file" class="modal-title">Add A New Video</h5>
+									<button type="button" class="close" id="btn-close-add" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<div class="mb-3">
+                    <input type="file" id="file" accept="video/*">
+                  </div>
+									<div class="form-group">
+                    <select class="multi-select" id="teacher-classes" placeholder="Select Classes" multiple>
+                      
+                    </select>
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="teacher-subjects">
+											
+										</select>
+									</div>
+                  <div class="form-group">
+                    <label for="file-description"">Description here</label>
+                    <textarea class="form-control" id="file-description" rows="3"></textarea>
+                  </div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" id="btn-cancel-add">Cancel</button>
+									<button type="button" class="btn btn-success" id="btn-add-file">Add</button>
+								</div>
+							</div>
+						</div>
+					</div>
+        </form>
+					<!----add-file-modal end--------->
+
+
+          <!----delete-file-modal start--------->
+          <form>
+					<div class="modal fade" tabindex="-1" id="delete-file-modal" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Delete Video</h5>
+									<button type="button" class="close" id="btn-close-delete" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>Are you sure you want to delete this</p>
+									<p class="text-warning"><small>this action Cannot be Undone,</small></p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" id="btn-cancel-delete" >Cancel</button>
+									<button type="button" class="btn btn-success" id="btn-delete-file">Delete</button>
+								</div>
+							</div>
+						</div>
+					</div>
+          </form>
+					<!----delet-file-modal end--------->
+        <!-- Start Table -->
+        <div class="userTable p-20 bg-white rad-10 m-20">
+          <h2 class="mt-0 mb-20">Videos List</h2>
+          <div class="responsive-table">
+            <table class="fs-15 w-full" id="teacher-files">
+              <thead>
+                <tr>
+                  <td>N</td>
+                  <td>File Name</td>
+                  <td>Description</td>
+                  <td>Subject</td>
+                  <td>Operation</td>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+          <!-- ==== pagenation start ===== -->
+          <nav aria-label="Page navigation example" class="mt-15">
+            <ul class="pagination justify-content-end" id="pagination">
+                
+              
+            </ul>
+          </nav>
+          <!-- ==== pagenation end ===== -->
+        </div>
+        <!-- End Table -->
+      </div>
+    </div>
+
+    
+    <!-- ------------------------------------------------------------------------------ -->
+    
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="../jquery.js"></script>
+
+    <!-- calling bootstrap -->
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+    <!-- caaling main.js -->
+    <script src="../main.js"></script>
+
+    <!-- calling class.js -->
+    <script src="js/teacher_videos.js"></script>
+  </body>
+</html>

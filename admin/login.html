@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title></title>
+    </head>
+
+    <body>
+
+        <div class="login-box">          
+            <div id="errorMsg">please enter a valid email</div>
+            <form method="POST">
+                <h2>Login</h2>
+                <div class="form">
+                    <div class="user-box">
+                        <input type="email" name="email" id="email" required />
+                        <label>Email</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" id="password" required />
+                        <i class="far fa-eye" id="eye-icon"></i>
+                        <label>Password</label>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="button" name="login" onclick="checkAndExecute()">Login</button>
+                </div>
+            </form>
+        </div> 
+        <!-- calling jquery -->
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+        <script src="../jquery.js"></script>
+
+        <script src="../regex.js"></script>
+
+        <script src="js/login.js"></script>
+        
+
+    </body>
+
+</html>
+
+

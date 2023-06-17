@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title></title>
+    </head>
+
+    <body>
+        <div class="login-box">
+            <div id="errorMsg">Erorr !</div>
+            <form>
+                <h2>Login</h2>
+                <div class="form">
+                    <div class="user-box">
+                        <input type="email" id="email" required />
+                        <label>Email</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" id="password" required />
+                        <i class="far fa-eye" id="eye-icon"></i>
+                        <label>Password</label>
+                    </div>
+                    <div class="userType">
+                        <input type="button" id="btn-teacher" class="active" value="Teacher">
+                        <input type="button" id="btn-student" value="Student">
+                    </div>
+                </div>
+                <div class="btn">
+                    <button type="button" onclick="checkAndExecute()">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- calling jquery -->
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+        <script src="../jquery.js"></script>
+
+        <script src="../regex.js"></script>
+
+        <script src="js/stucher_login.js"></script>
+        
+        
+
+    </body>
+
+</html>

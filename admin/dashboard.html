@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduBrid | admin profile</title>
+  
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="../fontawesome/css/all.min.css" />
+        
+  <!-- master.js -->
+  <link rel="stylesheet" href="css/master.css" />
+  
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+  
+  
+</head>
+
+<body>
+  <div class="page d-flex">
+
+    <!-- side bar *start* -->
+    <div class="sidebar bg-white p-20 p-relative">
+      <h3 class="p-relative txt-c mt-0">EduBrid</h3>
+      <ul>
+        <li>
+          <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="dashboard.html">
+            <i class="fa-solid fa-home fa-fw"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher.html">
+            <i class="fa-solid fa-chalkboard-teacher fa-fw"></i>
+            <span>Teachers</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="student.html">
+            <i class="fa-regular fa-user fa-fw"></i>
+            <span>Students</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="class.html">
+            <i class="fa-solid fa-book fa-fw"></i>
+            <span>Classes</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="subject.html">
+            <i class="fa-solid fa-book fa-fw"></i>
+            <span>Subjects</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="#" id="log-out-li">
+            <i class="fa-solid fa-sign-out fa-fw"></i>
+            <span>Log Out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- side bar *end* -->
+
+    <div class="content w-full">
+
+      <!-- page header *start* -->
+      <div class="head bg-white p-15 between-flex">
+        <div></div>
+        <div class="icons d-flex align-center">
+          <span class="notification p-relative">
+            <i id="translate" style="cursor: pointer;" class="fa-solid fa-globe fa-lg"></i>
+            <div class="toggle-traslate" id="toggle-traslate">
+              <a id="langEN">EN</a>
+              <a id="langFR">FR</a>
+            </div>
+          </span>
+          <span>           
+            <i href="#" id="log-out-icon" style="cursor: pointer; margin-left: 10px;" class="fa-solid fa-power-off fa-lg"></i>
+          </span>
+        </div>
+      </div>
+      <!-- page header *end* -->
+
+      <h1 class="p-relative">My Profile</h1>
+      <div class="wrapper d-grid gap-20">
+        <!-- Start Welcome Widget -->
+        <div class="welcome bg-white rad-10 txt-c-mobile block-mobile">
+          <div class="intro p-20 d-flex space-between bg-eee">
+            <div>
+              <h2 class="m-0">Welcome</h2>
+            </div>
+            <img class="hide-mobile" src="../images/welcome.png" alt="" />
+          </div>
+          <img src="../images/avatar.png" alt="" class="avatar" />
+          <div class="body txt-c d-flex f-wrap p-20 mt-20 mb-20 block-mobile">
+            <div><span class="d-block c-grey fs-14 mt-10 mb-10">Email</span><p id="email"></p></div>
+            <div><span class="d-block c-grey fs-14 mt-10 mb-10">First Name</span><p id="first-name"></p></div>
+            <div><span class="d-block c-grey fs-14 mt-10 mb-10">Last Name</span><p id="last-name"></p></div>
+          </div>
+          <!---- btn for update info  ---->
+            <div class="col-sm-3 mb-15">
+              <a  href="#" class="btn btn-secondary" id="btn-edit-profile">
+                <span>Update info</span>
+              </a>
+            </div>
+          <!-------->
+        </div>
+        <!-- End Welcome Widget -->
+
+        <!-- Start Ticket Widget -->
+        <div class="tickets p-20 bg-white rad-10">
+          <h2 class="mt-0 mb-10">WebSite Statistics</h2>
+          <p class="mt-0 mb-20 c-grey fs-15">Everything About Teacher & Student & File</p>
+          <div class="d-flex txt-c gap-20 f-wrap">
+            <div class="boxx rad-10 fs-13 c-grey">
+              <i class="fa-solid fa-chalkboard-teacher fa-fw fa-2x c-orange"></i>
+              <span class="d-block c-black fw-bold fs-25" id="num-teachers">20</span>
+              Teachers
+            </div>
+            <div class="boxx rad-10 fs-13 c-grey">
+              <i class="fa-solid fa-regular fa-user fa-fw fa-2x c-blue"></i>
+              <span class="d-block c-black fw-bold fs-25" id="num-students">200</span>
+              Students
+            </div>
+            <div class="boxx rad-10 fs-13 c-grey">
+              <i class="fa-solid fa-file-lines fa-fw fa-2x c-green"></i>
+              <span class="d-block c-black fw-bold fs-25" id="num-files">70</span>
+              Files
+            </div>
+            <div class="boxx rad-10 fs-13 c-grey">
+              <i class="fa-solid fa-video fa-fw fa-2x mb-10 c-red"></i>
+              <span class="d-block c-black fw-bold fs-25" id="num-videos">700</span>
+              Videos
+            </div>
+          </div>
+        </div>
+        <!-- End Ticket Widget -->
+
+        <!---- update profile modal  *start* ------>
+        <form>
+					<div class="modal fade" tabindex="-1" id="edit-profile-modal" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Edit Your Information</h5>
+									<button type="button" class="close" id="btn-close-edit" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<input type="text" id="edit-first-name" placeholder="Prenom" class="form-control" required>
+									</div>
+									<div class="form-group">
+										<input type="text" id="edit-last-name" placeholder="Nom" class="form-control" required>
+									</div>
+									<div class="form-group">
+										<input type="email" id="edit-email" placeholder="email" class="form-control" required>
+									</div>
+                  <div class="form-group">
+
+                    <label id="label"></label>
+                    <div class="input-group">
+                      <input type="password" class="form-control" placeholder="password to save changes" id="password" aria-describedby="password-edit-btn">
+                      <button class="btn btn-outline-secondary" type="button" id="btn-edit-password">Edit</button>
+                    </div>
+                    <div id="div-edit-password">
+                      <label></label>
+                      <input type="password" placeholder="new password" class="form-control" id="new-password">
+                      <label></label>
+                      <input type="password" placeholder="confirm password" class="form-control" id="confirm-password">
+                    </div>
+                    
+                  </div>
+                  
+
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" id="btn-cancel-edit">Cancel</button>
+									<button type="button" class="btn btn-success" id="btn-save-edit">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>
+        </form>
+				<!---- update profile modal  *end* ------>
+
+        <!---- logout modal  *start* --------->
+        <form>
+          <div class="modal fade" tabindex="-1" id="log-out-modal" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Log Out</h5>
+                  <button type="button" class="close" id="btn-close-log-out" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to log out</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="btn-cancel-log-out">Cancel</button>
+                  <button type="button" class="btn btn-success" id="btn-log-out">Log Out</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!---- logout modal  *end* --------->
+
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  <script src="../jquery.js"></script>
+
+    <!-- calling bootstrap -->
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+    <!-- caaling main.js -->
+    <script src="../main.js"></script>
+
+    <!-- calling class.js -->
+    <script src="js/dashboard.js"></script>
+
+  
+</body>
+
+</html>

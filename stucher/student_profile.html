@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> EduBrid | STUDENT : Profile</title>
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="../fontawesome/css/all.min.css" />
+
+  <!-- master.js -->
+  <link rel="stylesheet" href="css/master.css" />
+  
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+
+</head>
+
+<body>
+  <div class="page d-flex">
+    <div class="sidebar bg-white p-20 p-relative">
+      <h3 class="p-relative txt-c mt-0">EduBrid</h3>
+      <ul>
+        <li>
+          <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="student_profile.html">
+            <i class="fa-solid fa-user fa-fw"></i>
+            <span>profile</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="student_files.html">
+            <i class="fa-solid fa-file fa-fw"></i>
+            <span>File</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="student_videos.html">
+            <i class="fa-solid fa-video fa-fw"></i>
+            <span>Video</span>
+          </a>
+        </li>
+        <li>
+          <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="#" id="log-out-li">
+            <i class="fa-solid fa-sign-out fa-fw"></i>
+            <span>Exit</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="content w-full">
+      <!-- Start Head -->
+      <div class="head bg-white p-15 between-flex">
+        <div></div>
+        <div class="icons d-flex align-center">
+          <span class="notification p-relative">
+            <i id="translate" style="cursor: pointer;" class="fa-solid fa-globe fa-lg"></i>
+            <div class="toggle-traslate" id="toggle-traslate">
+              <a id="langEN">EN</a>
+              <a id="langFR">FR</a>
+            </div>
+          </span>
+          <span>
+            <i href="#" id="log-out-icon" data-toggle="modal" style="cursor: pointer; margin-left: 10px;"
+              class="fa-solid fa-power-off fa-lg"></i>
+          </span>
+        </div>
+      </div>
+      
+      <!---- logout modal  *start* --------->
+      <form>
+        <div class="modal fade" tabindex="-1" id="log-out-modal" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Log Out</h5>
+                <button type="button" class="close" id="btn-close-log-out" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure you want to log out</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btn-cancel-log-out">Cancel</button>
+                <button type="button" class="btn btn-success" id="btn-log-out">Log Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!---- logout modal  *end* --------->
+
+      <!-- End Head -->
+
+      <h1 class="p-relative">Profile</h1>
+      <!-- ============================= -->
+      <div class="profile-page m-20">
+        <div class="overview bg-white rad-10 d-flex align-center">
+          <div class="avatar-box txt-c p-20">
+            <img class="rad-half mb-10" src="../images/avatar.png" alt="" />
+            <h3 class="m-0" id="full-name"></h3>
+            <div class="rating mt-10 mb-10">
+              <!---- btn for update info  ---->
+              <a href="#" id="btn-edit-profile" class="btn btn-secondary" data-toggle="modal">
+                <span>Update info</span>
+              </a>
+            </div>
+          </div>
+
+
+          <!----Settings-modal start--------->
+          <form>
+            <div class="modal fade" tabindex="-1" id="edit-profile-modal" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Change Your Password</h5>
+                    <button type="button" class="close" id="btn-close-edit" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label></label>
+                      <div class="input-group" id="password_Chang">
+                        <input type="password" placeholder="old password" class="form-control" id="old-password">
+                      </div>
+                      <label></label>
+                      <input type="password" placeholder="new password" class="form-control" id="new-password">
+                      <label></label>
+                      <input type="password" placeholder="confirm password" class="form-control" id="confirm-password">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btn-cancel-edit">Cancel</button>
+                    <button type="button" class="btn btn-success" id="btn-save-edit">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!----Settings-modal end--------->
+
+
+          <div class="info-box w-full txt-c-mobile">
+            <div class="box p-20 d-flex align-center">
+              <h4 class="c-grey fs-15 m-0 w-full">General Information</h4>
+              <div class="fs-14">
+                <div class="d-flex gap-20">
+                  <div class="new_skills-card">
+                    <ul class="m-0 txt-c-mobile">
+                      <li>
+                          <!-- <span>
+                            <span class="c-grey">Full Name:</span>
+                            <span id="">Full Name</span>
+                          </span> -->
+                          <span>
+                            <span class="c-grey">Email:</span>
+                            <span id="email"></span>
+                          </span>
+                          <span>
+                            <span class="c-grey">Date Of Birth:</span>
+                            <span id="birth-date"></span>
+                          </span>
+                          <span>
+                            <span class="c-grey">Gender:</span>
+                            <span id="gender"></span>
+                          </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box p-20 d-flex align-center">
+              <h4 class="c-grey w-full fs-15 m-0">Student ID</h4>
+              <div class="fs-14">
+                <div class="other-data d-flex gap-20">
+                  <div class="new_skills-card rad-10">
+                    <ul class="m-0 txt-c-mobile">
+                      <li><span id="student-id"></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box p-20 d-flex align-center">
+              <h4 class="c-grey w-full fs-15 m-0">Class</h4>
+              <div class="fs-14">
+                <div class="other-data d-flex gap-20">
+                  <div class="skills-card rad-10">
+                    <ul class="m-0 txt-c-mobile">
+                      <li><span id="student-class"></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="../jquery.js"></script>
+
+    <!-- calling bootstrap -->
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+    <!-- caaling main.js -->
+    <script src="../main.js"></script>
+
+    <!-- calling class.js -->
+    <script src="js/student_profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: sans-serif;
+background: #eeeeee;
+}
+
+.login-box {
+width: 400px;
+position: absolute;
+top: 45%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #333;
+background: #fff;
+padding: 30px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+margin: 0 0 40px 0;
+font-size: 28px;
+text-align: center;
+}
+.form{
+border-radius: 5px;
+border: 1px solid #a0a0a0;
+padding: 20px;
+}
+.login-box form .user-box {
+position: relative;
+margin-top: 30px;
+margin-bottom: 10px;
+}
+
+.login-box form .user-box input {
+width: 100%;
+padding: 10px 0;
+font-size: 16px;
+color: #333;
+border: none;
+border-bottom: 1px solid #999;
+outline: none;
+background: transparent;
+}
+
+.login-box form .user-box label {
+position: absolute;
+top: 0;
+left: 0;
+font-size: 16px;
+color: #999;
+pointer-events: none;
+transition: 0.5s;
+}
+
+.login-box form .user-box input:focus ~ label,
+.login-box form .user-box input:valid ~ label {
+display: none;
+left: 0;
+color: #333;
+font-size: 12px;
+}
+
+input[type="button"]{
+	background: #ddd;
+	color: #000;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: 0.3s;
+
+}
+
+.btn button[type="button"]{
+width: 150px;
+background: #e16b5a;
+color: #ffffff;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+font-size: 18px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.btn button[type="button"]:hover {
+background: #a74738;
+}
+
+.userType{
+margin-top: 30px;
+display: flex;
+justify-content: space-evenly;
+
+}
+.btn{
+text-align: center;
+margin-top: 20px;
+}
+
+input[type="button"]:hover{
+	background: #a8b0a9;
+	color: #000;
+}
+
+
+.login-box form .form .userType input.active {
+	background: #555e56;
+	color: #fff;
+}
+
+	
+	
+#errorMsg {
+	display: none;
+	height: 40px;
+	background: red;
+	width: 400px;
+	color: #FFF;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+#eye-icon {
+	position: relative;
+	margin-left: 280px; 
+	top: -20px;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 430px) {
+	.login-box {
+		width: 300px;
+		transform: translate(-50%, -50%);
+	}
+	#errorMsg{
+  	width: 300px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+	.login-box{
+		top: 50%;
+	} 	
+}

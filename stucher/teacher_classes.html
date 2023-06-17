@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EduBrid | TEACHER : Clasess</title>
+    
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css" />
+
+    <!-- master.js -->
+    <link rel="stylesheet" href="css/master.css" />
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+    
+  </head>
+  <body>
+    <div class="page d-flex">
+      <!-- sidebar -> Menu -->
+      <div class="sidebar bg-white p-20 p-relative">
+        <h3 class="p-relative txt-c mt-0">EduBrid</h3>
+        <ul>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_profile.html">
+              <i class="fa-solid fa-user fa-fw"></i>
+              <span>profile</span>
+            </a>
+          </li>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_files.html">
+              <i class="fa-solid fa-file fa-fw"></i>
+              <span>Files</span>
+            </a>
+          </li>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_videos.html">
+              <i class="fa-solid fa-video fa-fw"></i>
+              <span>Videos</span>
+            </a>
+          </li>
+          <li>
+            <a class="active d-flex align-center fs-14 c-black rad-6 p-10" href="teacher_classes.html">
+              <i class="fa-solid fa-school fa-fw"></i>
+              <span>Classes</span>
+            </a>
+          </li>
+          <li>
+            <a class="d-flex align-center fs-14 c-black rad-6 p-10" href="#" id="log-out-li">
+              <i class="fa-solid fa-sign-out fa-fw"></i>
+              <span>Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="content w-full">
+        <!-- Start Head -->
+        <div class="head bg-white p-15 between-flex">
+          <div></div>
+          <div class="icons d-flex align-center">
+            <span class="notification p-relative">
+              <i id="translate" style="cursor: pointer;" class="fa-solid fa-globe fa-lg"></i>
+              <div class="toggle-traslate" id="toggle-traslate">
+                <a id="langEN">EN</a>
+                <a id="langFR">FR</a>
+              </div>
+            </span>
+            <span>           
+              <i href="#" id="log-out-icon" style="cursor: pointer; margin-left: 10px;" class="fa-solid fa-power-off fa-lg"></i>
+            </span>
+          </div>
+        </div>
+        <!-- End Head -->
+        <h1 class="p-relative">Clasess</h1>
+        <div class="m-20 gap-20">
+          <!-- Start Ticket Widget -->
+            <div class="jus-con_end d-flex txt-c gap-20 f-wrap">
+                <div class="selectSection p-relative">
+                  <div class="form-group">
+										<select class="form-control" id="class-filter">
+											
+										</select>
+									</div>
+                </div>
+            </div>
+          <!-- End Ticket Widget -->
+        </div>
+
+
+        <!---- logout modal  *start* --------->
+        <form>
+          <div class="modal fade" tabindex="-1" id="log-out-modal" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Log Out</h5>
+                  <button type="button" class="close" id="btn-close-log-out" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to log out</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="btn-cancel-log-out">Cancel</button>
+                  <button type="button" class="btn btn-success" id="btn-log-out">Log Out</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!---- logout modal  *end* --------->
+
+
+        <!-- Start Table -->
+        <div class="userTable p-20 bg-white rad-10 m-20">
+          <h2 class="mt-0 mb-20">students List</h2>
+          <div class="responsive-table">
+            <table class="fs-15 w-full" id="classes-table">
+              <thead>
+                <tr>
+                  <td>N</td>
+                  <td>Student ID</td>
+                  <td>Prenom</td>
+                  <td>Nom</td>
+                  <td>Date Brith</td>
+                  <td>Gender</td>
+                  <td>Class</td>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- ==== pagenation start ===== -->
+          <nav aria-label="Page navigation example" class="mt-15">
+            <ul class="pagination justify-content-end" id="pagination">
+                
+            </ul>
+          </nav>
+          <!-- ==== pagenation end ===== -->
+        </div>
+        <!-- End Table -->
+      </div>
+      
+    </div>
+    <!-- ------------------------------------------------------------------------------ -->
+    
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="../jquery.js"></script>
+
+    <!-- calling bootstrap -->
+    <script src="../bootstrap/bootstrap.min.js"></script>
+
+    <!-- caaling main.js -->
+    <script src="../main.js"></script>
+
+    <!-- calling class.js -->
+    <script src="js/teacher_classes.js"></script>
+
+  </body>
+</html>
